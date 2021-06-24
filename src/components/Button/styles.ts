@@ -11,10 +11,10 @@ export const styles = StyleSheet.create({
     },
     title: {
         flex: 1,
+        fontFamily: theme.fonts.text500,
         color: theme.colors.heading,
         fontSize: 15,
-        textAlign: 'center',
-        fontFamily: theme.fonts.text500,
+        textAlign: 'center'
     },
     iconWrapper: {
         width: 56,
