@@ -61,11 +61,12 @@ function AuthProvider({ children }: AuthProviderProps){
                 const userInfo = await api.get('/users/@me');
                 console.log(userInfo)
 
+                const userDiscriminatorNumber = userInfo.data.discriminator % 5;
                 const firstName = userInfo.data.username.split(' ')[0];
                 if (userInfo.data.avatar != null) {
                     userInfo.data.avatar = `${CDN_IMAGE}/avatars/${userInfo.data.id}/${userInfo.data.avatar}.png`;
                 } else {
-                    userInfo.data.avatar = `https://cdn.discordapp.com/embed/avatars/0.png`;
+                    userInfo.data.avatar = `https://cdn.discordapp.com/embed/avatars/${userDiscriminatorNumber}.png`;
                 };
                 
                 setUser({
