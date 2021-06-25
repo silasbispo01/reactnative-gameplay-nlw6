@@ -5,9 +5,7 @@ export const styles = StyleSheet.create({
     container: {
         width: '75%',
         height: 1,
+        alignSelf: 'flex-end',
         backgroundColor: theme.colors.secondary40,
-        marginBottom: 25,
-        marginTop: 5,
-        alignSelf: 'flex-end'
     },
 })
