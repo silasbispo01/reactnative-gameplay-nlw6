@@ -25,6 +25,7 @@ import { GuildProps } from "../../components/Guild";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { useNavigation } from "@react-navigation/core";
+import uuid from 'react-native-uuid'
 import { Guilds } from "../Guilds";
 
 export function AppointmentCreate() {
@@ -55,6 +56,7 @@ export function AppointmentCreate() {
     }
     async function handleSave () {
         const newAppointment = {
+            id: uuid.v4(),
             guild,
             category,
             date: `${day}/${month} ás ${hour}:${minute}h`,

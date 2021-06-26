@@ -26,7 +26,7 @@ type Props = RectButtonProps & {
 }
 export function Appointment({data, ...rest }: Props) {
     const [category] = categories.filter(item => item.id === data.category)
-    const { owner } = data.guild;
+    const { owner, icon, id } = data.guild;
     const { primary, on, secondary50, secondary70 } = theme.colors;
     return( 
         <RectButton {...rest } >
@@ -35,17 +35,17 @@ export function Appointment({data, ...rest }: Props) {
                     style={styles.guildIconContainer}
                     colors={[secondary50, secondary70]}
                 >
-                    <GuildIcon/>
+                    <GuildIcon guildId={id} iconId={icon}/>
                 </LinearGradient>
  
                 <View style={styles.content} >
                     <View style={styles.header}>
                         <Text style={styles.title}>
                             {data.guild.name}
-                        </Text>         
+                        </Text>
                         <Text style={styles.category}>
-                            { category.title }
-                        </Text>         
+                            { category?.title}
+                        </Text>                  
                     </View>
                     <View style={styles.footer}>
                         <View style={styles.dateInfo}>
