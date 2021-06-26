@@ -1,10 +1,22 @@
 import React from "react";
-import { Image } from 'react-native'
+import { Image, View } from 'react-native'
 import { styles } from "./styles";
+import DiscordSvg from '../../assets/discord.svg'
+const { CDN_IMAGE } = process.env
 
-export function GuildIcon() {
-    const uri = 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/147573378/original/4e1e7dbfb6bcf24d2c7d0ad51eef1f2ea366d6a2/design-and-help-with-discord-server.png'
+type Props = {
+    guildId: string;
+    iconId: string | null;
+}
+export function GuildIcon({ guildId,  iconId }: Props) {
+    const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
+    
     return( 
-            <Image source={{ uri }} style={styles.image} resizeMode='cover'/>
+        <View style={styles.container}>
+            {
+                iconId ?  <Image source={{ uri }} style={styles.image} resizeMode='cover'/>
+                : <DiscordSvg  width={40} height={40} />
+            }
+        </View>
     );
 }

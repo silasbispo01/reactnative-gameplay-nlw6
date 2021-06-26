@@ -5,6 +5,15 @@ export const styles = StyleSheet.create({
     image: {
         width: 61,
         height: 64,
+    },
+    container: {
+        width: 61,
+        height: 64,
         borderRadius: 8,
+        backgroundColor: theme.colors.discord,
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden'
+        
     }
 })

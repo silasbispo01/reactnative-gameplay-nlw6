@@ -62,8 +62,8 @@ export function AppointmentDetails() {
                 renderItem={({item}) => 
                     <Member data={item}/>     
             }
-                ItemSeparatorComponent={() => <ListDivider/>}
-                style={styles.members}
+                ItemSeparatorComponent={() => <ListDivider isCentered/>}
+                style={styles.members}    
             />
             <View style={styles.footer}>
                 <ButtonIcon title='Entrar na Partida'/>
